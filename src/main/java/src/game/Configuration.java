@@ -7,6 +7,12 @@ import java.awt.*;
  */
 public class Configuration {
 
+    /*
+    Window properties must stay the same if the neural network has been
+    created with weights of a given size (columns x rows)
+    Otherwise a reset is necessary and possible with a call to the
+    NetworkConfiguration file
+     */
     // GameBoard.
     static final int BOARD_COLUMNS   = 30;
     static final int BOARD_ROWS      = 20;

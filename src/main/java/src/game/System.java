@@ -518,6 +518,10 @@ class System {
         return new String(sb);
     }
 
+    /**
+    The snake is able to see through all the window, all squares are identified by a code
+     food is 1 , empty is -1, snake body is 0
+     */
     public void setField()
     {
         double [] field = new double[Configuration.BOARD_ROWS* Configuration.BOARD_COLUMNS];
@@ -529,11 +533,11 @@ class System {
                 int place = offset+x;
                 Square sq = new Square(x, y);
                 if (snake.contains(sq)) {
-                    field[place]=.4;
+                    field[place]=0;
                 } else if (food.equals(sq)) {
-                    field[place]=10.;
+                    field[place]=1;
                 } else {
-                    field[place]= 0;
+                    field[place]= -1;
                 }
             }
         }

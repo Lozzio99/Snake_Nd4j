@@ -17,7 +17,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import java.util.Random;
 
-public class ImageClassificationConfiguration
+public class NetworkConfiguration
 {
     protected static long seed = 42;
     protected static Random rng = new Random(seed);
@@ -202,6 +202,10 @@ public class ImageClassificationConfiguration
         return new MultiLayerNetwork(conf);
     }
 
+    /*
+    Best found so far for image classification with the mnist digits dataset(accuracy 97%)
+     */
+
     public static MultiLayerNetwork getModelV4()
     {
         MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
@@ -378,6 +382,10 @@ public class ImageClassificationConfiguration
     private static DenseLayer fullyConnected(String name, int out, double bias, double dropOut, Distribution dist) {
         return new DenseLayer.Builder().name(name).nOut(out).biasInit(bias).dropOut(dropOut).dist(dist).build();
     }
+
+    /*
+    Some known configurations
+     */
     public static MultiLayerNetwork LeNet()
     {
         MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
